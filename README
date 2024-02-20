@@ -1,0 +1,60 @@
+Step 1: Set up GitHub Repository
+Create a new GitHub repository for your project.
+Add your CloudFormation templates (e.g., template.yaml) to the repository.
+
+
+Step 2: Set up AWS Services
+
+AWS IAM: Create an IAM role with permissions for CodePipeline, CodeBuild, and CloudFormation.
+
+AWS CodePipeline:
+->Create a new CodePipeline pipeline.
+->Configure a source stage to connect to your GitHub repository.
+->Configure a build stage to use AWS CodeBuild.
+->Configure a deployment stage to deploy the CloudFormation stack.
+
+AWS CodeBuild:
+->Create a CodeBuild project.
+->Specify the source as the GitHub repository.
+->Define a buildspec.yml file to specify build instructions.
+
+
+Step 3: Write Buildspec File
+Create a buildspec.yaml file in your GitHub repository to define the build instructions for CodeBuild:
+
+	buildspec.yaml
+
+
+Step 4: Define CloudFormation Template
+Create or update your CloudFormation template (template.yaml) in your GitHub repository:
+
+	template.yaml
+
+
+Step 5: Connect CodePipeline to GitHub
+Connect your CodePipeline pipeline to your GitHub repository:
+->In CodePipeline, edit your pipeline.
+->Add a new source stage and select GitHub as the source provider.
+->Follow the prompts to connect to your GitHub repository.
+
+
+Step 6: Deploy Pipeline
+Deploy your CodePipeline pipeline:
+->Save your changes in CodePipeline.
+->Trigger a manual or automatic execution of the pipeline.
+
+
+Step 7: Monitor and Manage
+Monitor the progress of your pipeline in the AWS Management Console. You can view the execution status, logs, and any errors encountered during the pipeline run.
+
+
+Step 8: Continuous Integration and Deployment
+With the pipeline set up, any changes pushed to your GitHub repository will automatically trigger the pipeline, executing the build and deployment steps defined in CodeBuild and CloudFormation. This enables continuous integration and deployment of your infrastructure changes with each code commit.
+
+By following these steps, you've set up a complete AWS IaC DevOps pipeline using AWS CodePipeline, AWS CodeBuild, and GitHub. This pipeline automates the deployment of infrastructure changes stored in your GitHub repository, providing a reliable and efficient way to manage your AWS resources.
+
+
+
+
+
+
